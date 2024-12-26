@@ -10,6 +10,8 @@ import {
 import { formatCurrency } from './utils';
 
 export async function fetchRevenue() {
+  const invoiceCountPromise = sql`SELECT COUNT(*) FROM invoices`;
+const customerCountPromise = sql`SELECT COUNT(*) FROM customers`;
   try {
     // Artificially delay a response for demo purposes.
     // Don't do this in production :)
